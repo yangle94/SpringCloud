@@ -6,19 +6,19 @@ package cn.ylapl;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.scheduling.annotation.EnableScheduling;
+import org.springframework.cloud.config.server.EnableConfigServer;
 
 /**
  * @author yangle
  * @version $Id SeleniumMontitoring.java, v 0.1 2017-01-21 下午5:18 yangle Exp $$
  */
+@EnableConfigServer
 @SpringBootApplication
-@EnableScheduling
-public class Base {
+public class SpringBootConfig {
 
     public static void main(String arg[]) {
 
-        SpringApplication.run(Base.class, arg);
+        SpringApplication.run(SpringBootConfig.class, arg);
     }
 
 }

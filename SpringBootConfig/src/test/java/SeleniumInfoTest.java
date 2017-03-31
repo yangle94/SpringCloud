@@ -3,10 +3,8 @@
  * Copyright (C) 2004-2017 All Rights Reserved.
  */
 
-import cn.ylapl.Base;
-import org.junit.Test;
+import cn.ylapl.SpringBootConfig;
 import org.junit.runner.RunWith;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
@@ -15,15 +13,7 @@ import org.springframework.test.context.junit4.SpringRunner;
  * @version $Id SeleniumInfoTest.java, v 0.1 2017-02-05 下午12:58 yangle Exp $$
  */
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = Base.class)
+@SpringBootTest(classes = SpringBootConfig.class)
 public class SeleniumInfoTest {
-    @Autowired
-    private SeleniumInfoMapper seleniumInfoMapper;
-
-    @Test
-    public void findAll() {
-        seleniumInfoMapper.findAll();
-    }
-
 
 }

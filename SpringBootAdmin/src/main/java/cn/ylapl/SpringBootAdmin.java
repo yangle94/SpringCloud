@@ -21,11 +21,11 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 @EnableAutoConfiguration(exclude = {ErrorMvcAutoConfiguration.class})
 @EnableAdminServer
 @EnableDiscoveryClient
-public class Base {
+public class SpringBootAdmin {
 
     public static void main(String arg[]) {
 
-        SpringApplication.run(Base.class, arg);
+        SpringApplication.run(SpringBootAdmin.class, arg);
     }
 
 }
