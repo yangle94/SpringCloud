@@ -3,13 +3,15 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>SpringBootOne</groupId>
-    <artifactId>SpringBootOne</artifactId>
+    <groupId>springboot-one</groupId>
+    <artifactId>springboot.one</artifactId>
     <version>0.1</version>
     <packaging>jar</packaging>
 
     <properties>
         <java.version>1.8</java.version>
+        <docker.image.prefix>angley</docker.image.prefix>
+        <finalName>springboot-one</finalName>
     </properties>
 
     <!-- Inherit defaults from Spring Boot -->
@@ -23,8 +25,8 @@
         <dependencies>
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
-                <artifactId>spring-cloud-config</artifactId>
-                <version>1.2.3.RELEASE</version>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>Dalston.RELEASE</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -140,7 +142,7 @@
 
     <!-- Package as an executable jar -->
     <build>
-        <finalName>zs5s-SeleniumMonitoring</finalName>
+        <finalName>${finalName}</finalName>
         <resources>
             <resource>
                 <directory>src/main/resources</directory>
@@ -148,6 +150,22 @@
             </resource>
         </resources>
         <plugins>
+            <!-- docker打包工具 -->
+            <plugin>
+                <groupId>com.spotify</groupId>
+                <artifactId>docker-maven-plugin</artifactId>
+                <configuration>
+                    <imageName>${docker.image.prefix}/${finalName}</imageName>
+                    <dockerDirectory>src/main/docker</dockerDirectory>
+                    <resources>
+                        <resource>
+                            <targetPath>/</targetPath>
+                            <directory>${project.build.directory}</directory>
+                            <include>${finalName}.jar</include>
+                        </resource>
+                    </resources>
+                </configuration>
+            </plugin>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
@@ -162,30 +180,4 @@
             </plugin>
         </plugins>
     </build>
-
-    <!-- Add Spring repositories -->
-    <!-- (you don't need this if you are using a .RELEASE version) -->
-    <!--<repositories>-->
-        <!--<repository>-->
-            <!--<id>spring-snapshots</id>-->
-            <!--<url>http://repo.spring.io/snapshot</url>-->
-            <!--<snapshots>-->
-                <!--<enabled>true</enabled>-->
-            <!--</snapshots>-->
-        <!--</repository>-->
-        <!--<repository>-->
-            <!--<id>spring-milestones</id>-->
-            <!--<url>http://repo.spring.io/milestone</url>-->
-        <!--</repository>-->
-    <!--</repositories>-->
-    <!--<pluginRepositories>-->
-        <!--<pluginRepository>-->
-            <!--<id>spring-snapshots</id>-->
-            <!--<url>http://repo.spring.io/snapshot</url>-->
-        <!--</pluginRepository>-->
-        <!--<pluginRepository>-->
-            <!--<id>spring-milestones</id>-->
-            <!--<url>http://repo.spring.io/milestone</url>-->
-        <!--</pluginRepository>-->
-    <!--</pluginRepositories>-->
 </project>
