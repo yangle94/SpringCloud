@@ -11,7 +11,7 @@
     <properties>
         <java.version>1.8</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <docker.image.prefix>springcloud</docker.image.prefix>
+        <docker.image.prefix>angley</docker.image.prefix>
         <finalName>springboot-config</finalName>
     </properties>
 
@@ -22,7 +22,7 @@
         <version>1.5.2.RELEASE</version>
     </parent>
 
-    <!-- Spring Config Server-->
+    <!-- Spring Cloud-->
     <dependencyManagement>
         <dependencies>
             <dependency>
@@ -48,6 +48,12 @@
                     <artifactId>spring-boot-starter-tomcat</artifactId>
                 </exclusion>
             </exclusions>
+        </dependency>
+
+        <!-- SpringCloud Eureka Client -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-eureka</artifactId>
         </dependency>
 
         <!-- SpringBoot config monitor -->
@@ -84,13 +90,6 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-jetty</artifactId>
-        </dependency>
-
-        <!-- 测试集成 -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
         </dependency>
 
         <!-- Swagger -->

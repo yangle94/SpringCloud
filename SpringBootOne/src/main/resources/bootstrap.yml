@@ -3,8 +3,8 @@ spring:
     name: springbootOne
   cloud:
     config:
-      uri: http://localhost:9002
-      profile : dev
+      uri: http://config:9002
+      profile: ${spring.profiles.active:dev}
 
 server:
   port: 9002

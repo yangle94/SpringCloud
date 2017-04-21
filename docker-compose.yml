@@ -1,0 +1,23 @@
+netflix:
+  image: angley/springboot-netflix
+  ports:
+   - "9003:9003"
+
+config:
+  image: angley/springboot-config
+  ports:
+   - "9002:9002"
+  links:
+   - netflix
+
+one:
+  image: angley/springboot-one
+  links:
+   - netflix
+   - config
+
+admin:
+  image: angley/springboot-admin
+  links:
+   - netflix
+   - config
