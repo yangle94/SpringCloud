@@ -4,6 +4,8 @@
  */
 package cn.ylapl.config;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
@@ -27,6 +29,8 @@ import javax.annotation.PostConstruct;
 @EnableSwagger2
 public class SwaggerConfig {
 
+    private static final Logger logger = LoggerFactory.getLogger(SwaggerConfig.class);
+
     @Value("eureka.client.serviceUrl.defaultZone")
     private String url;
 
@@ -35,6 +39,7 @@ public class SwaggerConfig {
 
     @PostConstruct
     public void getU() {
+        logger.error("eureka.client.serviceUrl.defaultZone:{}", env.getProperty("eureka.client.serviceUrl.defaultZone"));
         System.out.println(env.getProperty("eureka.client.serviceUrl.defaultZone"));
     }
 

@@ -198,18 +198,18 @@
     </appender>
 
     <!--可以控制所有spring的输出级别，最为管用-->
-    <logger name="org.springframework" level="INFO" />
+    <logger name="org.springframework" level="ERROR" />
     <logger name="org.hibernate" level="WARN" />
 
     <!-- 生产环境下，将此级别配置为适合的级别，以免日志文件太多或影响程序性能 -->
-    <root level="INFO">
+    <root level="ERROR">
         <appender-ref ref="FILEERROR" />
         <appender-ref ref="FILEWARN" />
         <appender-ref ref="FILEINFO" />
     </root>
 
     <!-- 显示到控制台的日志输出级别 -->
-    <root level="INFO">
+    <root level="ERROR">
         <appender-ref ref="STDOUT" />
         <appender-ref ref="FILE" />
     </root>
