@@ -5,6 +5,3 @@ spring:
     config:
       uri: http://config:9002
 #      profile: dev
-
-server:
-  port: 9002

@@ -1,16 +1,7 @@
-/**
- * Company
- * Copyright (C) 2004-2017 All Rights Reserved.
- */
 package cn.ylapl.config;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.core.env.Environment;
 import org.springframework.web.context.request.async.DeferredResult;
 import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
@@ -19,8 +10,6 @@ import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
-import javax.annotation.PostConstruct;
-
 /**
  * @author yangle
  * @version $Id SwaggerConfig.java, v 0.1 2017-02-05 下午3:17 yangle Exp $$
@@ -28,20 +17,6 @@ import javax.annotation.PostConstruct;
 @Configuration
 @EnableSwagger2
 public class SwaggerConfig {
-
-    private static final Logger logger = LoggerFactory.getLogger(SwaggerConfig.class);
-
-    @Value("eureka.client.serviceUrl.defaultZone")
-    private String url;
-
-    @Autowired
-    private Environment env;
-
-    @PostConstruct
-    public void getU() {
-        logger.error("eureka.client.serviceUrl.defaultZone:{}", env.getProperty("eureka.client.serviceUrl.defaultZone"));
-        System.out.println(env.getProperty("eureka.client.serviceUrl.defaultZone"));
-    }
 
     @Bean
     public Docket demoApi() {
@@ -59,7 +34,8 @@ public class SwaggerConfig {
     }
 
     private ApiInfo demoApiInfo() {
-        ApiInfo apiInfo = new ApiInfo("豆神科技",//大标题
+
+        return new ApiInfo("豆神科技",//大标题
                 "豆神科技",//小标题
                 "1.0",//版本
                 "NO terms of service",
@@ -67,7 +43,5 @@ public class SwaggerConfig {
                 "The Apache License, Version 2.0",//链接显示文字
                 "http://www.apache.org/licenses/LICENSE-2.0.html"//网站链接
         );
-
-        return apiInfo;
     }
 }

@@ -10,14 +10,20 @@ config:
   links:
    - netflix
 
-#one:
-#  image: angley/springboot-one
-#  links:
-#   - netflix
-#   - config
+one:
+  image: angley/springboot-one
+  links:
+   - netflix
+   - config
 
 admin:
   image: angley/springboot-admin
   links:
    - netflix
    - config
+
+apigetway:
+  image: angley/springboot-apigetway
+  links:
+  - netflix
+  - config
