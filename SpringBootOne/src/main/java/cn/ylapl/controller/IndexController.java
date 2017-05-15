@@ -1,11 +1,9 @@
-/**
- * Company
- * Copyright (C) 2004-2017 All Rights Reserved.
- */
 package cn.ylapl.controller;
 
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.*;
 
 /**
@@ -16,12 +14,15 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("jpush")
 public class IndexController {
 
+    private static final Logger logger = LoggerFactory.getLogger(IndexController.class);
+
     @ApiImplicitParams({
             @ApiImplicitParam(name = "id", value = "记录ID", required = true, dataType = "String", paramType = "Query")
     })
     @RequestMapping("/test")
     public String index(@RequestParam String id) {
-        return "";
+        logger.info("springbootOne1被调用" + id);
+        return "id:" + id;
     }
 
     public static IndexController getIndex() {

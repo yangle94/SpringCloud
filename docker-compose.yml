@@ -24,6 +24,8 @@ admin:
 
 apigetway:
   image: angley/springboot-apigetway
+  ports:
+   - "9002:9002"
   links:
   - netflix
   - config

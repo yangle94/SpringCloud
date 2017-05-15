@@ -46,49 +46,33 @@
                 </exclusion>
             </exclusions>
         </dependency>
+
+        <!-- jetty -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-jetty</artifactId>
         </dependency>
+
+        <!-- 集成测试 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+
+        <!-- admin -->
         <dependency>
             <groupId>de.codecentric</groupId>
             <artifactId>spring-boot-admin-starter-client</artifactId>
             <version>1.4.6</version>
         </dependency>
+
+        <!-- 健康检查 -->
         <dependency>
             <groupId>org.jolokia</groupId>
             <artifactId>jolokia-core</artifactId>
         </dependency>
     </dependencies>
-    <!-- 多环境打包 -->
-    <profiles>
-        <profile>
-            <id>dev</id>
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
-            <properties>
-                <profileActive>dev</profileActive>
-            </properties>
-        </profile>
-        <profile>
-            <id>test</id>
-            <properties>
-                <profileActive>test</profileActive>
-            </properties>
-        </profile>
-        <profile>
-            <id>prod</id>
-            <properties>
-                <profileActive>prod</profileActive>
-            </properties>
-        </profile>
-    </profiles>
 
     <!-- Package as an executable jar -->
     <build>
