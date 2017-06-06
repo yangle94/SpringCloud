@@ -94,6 +94,11 @@
             <artifactId>spring-boot-starter-jetty</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+
     </dependencies>
 
     <!-- Package as an executable jar -->
@@ -110,6 +115,7 @@
             <plugin>
                 <groupId>com.spotify</groupId>
                 <artifactId>docker-maven-plugin</artifactId>
+                <version>0.4.13</version>
                 <configuration>
                     <imageName>${docker.image.prefix}/${finalName}</imageName>
                     <dockerDirectory>src/main/docker</dockerDirectory>
