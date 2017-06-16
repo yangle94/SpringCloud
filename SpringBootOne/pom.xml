@@ -65,6 +65,12 @@
             <artifactId>spring-cloud-starter-eureka</artifactId>
         </dependency>
 
+        <!--SpringCloud Hystrix断路器-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-hystrix</artifactId>
+        </dependency>
+
         <!-- 集成测试 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
