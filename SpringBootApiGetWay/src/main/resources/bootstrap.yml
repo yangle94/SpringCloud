@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: springbootApiGetWay
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        service-id: configserver
+#      uri: http://localhost:9002
+eureka:
+  client:
+    service-url:
+      defaultZone: http://netflix:9003/eureka/
