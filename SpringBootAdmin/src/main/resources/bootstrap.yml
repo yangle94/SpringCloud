@@ -3,8 +3,11 @@ spring:
     name: springbootAdmin
   cloud:
     config:
-      uri: http://config:9002
+      discovery:
+        enabled: true
+        service-id: configserver
 #      uri: http://localhost:9002
-
-server:
-  port: 9000
+eureka:
+  client:
+    service-url:
+      defaultZone: http://netflix:9003/eureka/

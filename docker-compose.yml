@@ -10,28 +10,35 @@ config:
   links:
    - netflix
 
-one:
-  image: angley/springboot-one
-  links:
-   - netflix
-   - config
-
-one:
-  image: angley/springboot-one
-  links:
-   - netflix
-   - config
-
 admin:
   image: angley/springboot-admin
   links:
-   - netflix
-   - config
+    - netflix
+    - config
+
+one:
+  image: angley/springboot-one
+  links:
+    - netflix
+    - config
+    - admin
+
+two:
+  image: angley/springboot-one
+  links:
+    - netflix
+    - config
+    - admin
 
 apigetway:
   image: angley/springboot-apigetway
   ports:
-   - "9004:9004"
+    - "9004:9004"
   links:
-  - netflix
-  - config
+    - netflix
+    - config
+    - admin
+    - one
+    - two
+
+

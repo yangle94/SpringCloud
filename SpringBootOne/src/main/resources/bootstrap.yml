@@ -3,5 +3,11 @@ spring:
     name: springbootOne
   cloud:
     config:
-      uri: http://config:9002
+      discovery:
+        enabled: true
+        service-id: configserver
 #      profile: dev
+eureka:
+  client:
+    service-url:
+      defaultZone: http://netflix:9003/eureka/
