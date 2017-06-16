@@ -16,12 +16,12 @@ admin:
     - netflix
     - config
 
-one:
-  image: angley/springboot-one
-  links:
-    - netflix
-    - config
-    - admin
+#one:
+#  image: angley/springboot-one
+#  links:
+#    - netflix
+#    - config
+#    - admin
 
 two:
   image: angley/springboot-one
@@ -38,7 +38,7 @@ apigetway:
     - netflix
     - config
     - admin
-    - one
+#    - one
     - two
 
 
