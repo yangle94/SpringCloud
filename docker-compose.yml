@@ -1,44 +1,59 @@
-netflix:
-  image: angley/springboot-netflix
-  ports:
-   - "9003:9003"
+version: "3"
+services:
+  netflix:
+  #  build: ./SpringBootNetflix/src/main/docker/
+    image: angley/springboot-netflix
+    ports:
+     - "9003:9003"
+    hostname: netflix
+#    environment:
+#          - spring.profiles.active=peer1
 
-config:
-  image: angley/springboot-config
-  ports:
-   - "9002:9002"
-  links:
-   - netflix
+  config:
+  #  build: ./SpringBootConfig/src/main/docker/
+    image: angley/springboot-config
+    hostname: config
+    ports:
+     - "9002:9002"
+    links:
+     - netflix
 
-admin:
-  image: angley/springboot-admin
-  links:
-    - netflix
-    - config
+  admin:
+  #  build: ./SpringBootAdmin/src/main/docker/
+    image: angley/springboot-admin
+    hostname: admin
+    links:
+      - netflix
+      - config
 
-#one:
-#  image: angley/springboot-one
-#  links:
-#    - netflix
-#    - config
-#    - admin
+  one:
+  #  build: ./SpringBootOne/src/main/docker/
+    image: angley/springboot-one
+    hostname: one
+    links:
+      - netflix
+      - config
+      - admin
 
-two:
-  image: angley/springboot-one
-  links:
-    - netflix
-    - config
-    - admin
+  two:
+  #  build: ./SpringBootOne/src/main/docker/
+    image: angley/springboot-one
+    hostname: two
+    links:
+      - netflix
+      - config
+      - admin
 
-apigetway:
-  image: angley/springboot-apigetway
-  ports:
-    - "9004:9004"
-  links:
-    - netflix
-    - config
-    - admin
-#    - one
-    - two
-
+  apigetway:
+  #  build: ./SpringBootApiGetWay/src/main/docker/
+    image: angley/springboot-apigetway
+    hostname: apigetway
+    ports:
+      - "9004:9004"
+    links:
+      - netflix
+      - config
+      - admin
+      - one
+      - two
 
