@@ -1,56 +1,36 @@
 version: "3"
 services:
 
-  config:
-    image: angley/springboot-config
-    hostname: config
-    ports:
-     - "9002:9002"
-    links:
-     - netflix
-    environment:
-     - spring.cloud.config.profile=prod
-     - EUREKA_SERVER_ADDRESS=eureka
-     networks:
-       - springcloud-overlay
-
   admin:
     image: angley/springboot-admin
     hostname: admin
-    links:
-      - netflix
-      - config
     environment:
       - spring.cloud.config.profile=prod
       - EUREKA_SERVER_ADDRESS=eureka
     networks:
-      - springcloud-overlay
+      - eureka-net
 
   one:
     image: angley/springboot-one
     hostname: one
     links:
-      - netflix
-      - config
       - admin
     environment:
       - spring.cloud.config.profile=prod
       - EUREKA_SERVER_ADDRESS=eureka
-          networks:
-            - springcloud-overlay
+    networks:
+      - eureka-net
 
   two:
     image: angley/springboot-one
     hostname: two
     links:
-      - netflix
-      - config
       - admin
     environment:
       - spring.cloud.config.profile=prod
       - EUREKA_SERVER_ADDRESS=eureka
-          networks:
-            - springcloud-overlay
+    networks:
+      - eureka-net
 
   apigetway:
     image: angley/springboot-apigetway
@@ -58,16 +38,14 @@ services:
     ports:
       - "9004:9004"
     links:
-      - netflix
-      - config
       - admin
       - one
       - two
     environment:
       - spring.cloud.config.profile=prod
       - EUREKA_SERVER_ADDRESS=eureka
-          networks:
-            - springcloud-overlay
+    networks:
+      - eureka-net
 
 networks:
   eureka-net:

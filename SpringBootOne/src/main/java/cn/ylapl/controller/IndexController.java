@@ -21,7 +21,7 @@ public class IndexController {
     })
     @RequestMapping("/test")
     public String index(@RequestParam String id) {
-        logger.info("springbootOne1被调用" + id);
+        logger.error("springbootOne1被调用{}", id);
         return "id:" + id;
     }
 

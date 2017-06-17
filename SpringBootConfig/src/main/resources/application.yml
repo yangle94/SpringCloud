@@ -1,0 +1,42 @@
+#时区
+spring:
+  jackson:
+    time-zone: GMT+8
+  cloud:
+    config:
+      server:
+        git:
+          ##项目的git地址
+          uri: https://github.com/yangle94/config
+  application:
+    name: configserver
+
+#JMX
+endpoints:
+  jmx:
+    unique-names: true
+
+management:
+  security:
+    enabled: false
+  health:
+    db:
+      enabled: false
+
+
+security:
+  basic:
+    enabled: false
+
+#JettyPort
+server:
+  port: 9002
+
+
+#eureka url
+eureka:
+  client:
+    service-url:
+      defaultZone: http://${EUREKA_SERVER_ADDRESS}:9003/eureka/
+
+

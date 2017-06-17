@@ -209,7 +209,7 @@
     </root>
 
     <!-- 显示到控制台的日志输出级别 -->
-    <root level="INFO">
+    <root level="ERROR">
         <appender-ref ref="STDOUT" />
         <appender-ref ref="FILE" />
     </root>
