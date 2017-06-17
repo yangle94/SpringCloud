@@ -1,51 +1,58 @@
 version: "3"
 services:
-  netflix:
-  #  build: ./SpringBootNetflix/src/main/docker/
-    image: angley/springboot-netflix
-    ports:
-     - "9003:9003"
-    hostname: netflix
-#    environment:
-#          - spring.profiles.active=peer1
 
   config:
-  #  build: ./SpringBootConfig/src/main/docker/
     image: angley/springboot-config
     hostname: config
     ports:
      - "9002:9002"
     links:
      - netflix
+    environment:
+     - spring.cloud.config.profile=prod
+     - EUREKA_SERVER_ADDRESS=eureka
+     networks:
+       - springcloud-overlay
 
   admin:
-  #  build: ./SpringBootAdmin/src/main/docker/
     image: angley/springboot-admin
     hostname: admin
     links:
       - netflix
       - config
+    environment:
+      - spring.cloud.config.profile=prod
+      - EUREKA_SERVER_ADDRESS=eureka
+    networks:
+      - springcloud-overlay
 
   one:
-  #  build: ./SpringBootOne/src/main/docker/
     image: angley/springboot-one
     hostname: one
     links:
       - netflix
       - config
       - admin
+    environment:
+      - spring.cloud.config.profile=prod
+      - EUREKA_SERVER_ADDRESS=eureka
+          networks:
+            - springcloud-overlay
 
   two:
-  #  build: ./SpringBootOne/src/main/docker/
     image: angley/springboot-one
     hostname: two
     links:
       - netflix
       - config
       - admin
+    environment:
+      - spring.cloud.config.profile=prod
+      - EUREKA_SERVER_ADDRESS=eureka
+          networks:
+            - springcloud-overlay
 
   apigetway:
-  #  build: ./SpringBootApiGetWay/src/main/docker/
     image: angley/springboot-apigetway
     hostname: apigetway
     ports:
@@ -56,4 +63,13 @@ services:
       - admin
       - one
       - two
+    environment:
+      - spring.cloud.config.profile=prod
+      - EUREKA_SERVER_ADDRESS=eureka
+          networks:
+            - springcloud-overlay
 
+networks:
+  eureka-net:
+    external:
+      name: eureka-net

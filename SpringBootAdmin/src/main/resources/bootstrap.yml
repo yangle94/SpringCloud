@@ -10,4 +10,4 @@ spring:
 eureka:
   client:
     service-url:
-      defaultZone: http://netflix:9003/eureka/
+      defaultZone: http://${EUREKA_SERVER_ADDRESS}:9003/eureka/
