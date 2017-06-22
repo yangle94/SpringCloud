@@ -1,0 +1,30 @@
+#端口
+server:
+  port: 9003
+
+#注释此行，自动去检测主机名
+#eureka:
+#  instance:
+#    hostname: one
+
+#判断是否注册自身
+eureka:
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+#    其它eureka地址
+#    serviceUrl:
+#      defaultZone: http://localhost:${server:port}/eureka/,${ADDITIONAL_EUREKA_SERVER_LIST}
+
+
+
+#serviceID
+spring:
+  application:
+      name: eureka
+
+#自我保护模式
+#eureka:server:enable-self-preservation=false
+eureka:
+  server:
+    eviction-interval-timer-in-ms: 3000
