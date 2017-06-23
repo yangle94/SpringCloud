@@ -16,8 +16,6 @@ eureka:
 #    serviceUrl:
 #      defaultZone: http://localhost:${server:port}/eureka/,${ADDITIONAL_EUREKA_SERVER_LIST}
 
-
-
 #serviceID
 spring:
   application:
