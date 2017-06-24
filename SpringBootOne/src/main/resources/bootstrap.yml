@@ -6,7 +6,8 @@ spring:
       discovery:
         enabled: true
         service-id: configserver
-#      profile: dev
+      fail-fast: true
+
 eureka:
   client:
     service-url:
