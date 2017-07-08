@@ -7,14 +7,23 @@ server:
 #  instance:
 #    hostname: one
 
-#判断是否注册自身
+
 eureka:
   client:
+
+    #判断是否注册自身
     registerWithEureka: true
     fetchRegistry: true
-#    其它eureka地址
-#    serviceUrl:
-#      defaultZone: http://localhost:${server:port}/eureka/,${ADDITIONAL_EUREKA_SERVER_LIST}
+
+    #其它eureka地址
+    serviceUrl:
+      defaultZone: ${ADDITIONAL_EUREKA_SERVER_LIST}
+
+  instance:
+    hostname: ${hostName}
+
+  server:
+    eviction-interval-timer-in-ms: 3000
 
 #serviceID
 spring:
@@ -23,6 +32,5 @@ spring:
 
 #自我保护模式
 #eureka:server:enable-self-preservation=false
-eureka:
-  server:
-    eviction-interval-timer-in-ms: 3000
+
+

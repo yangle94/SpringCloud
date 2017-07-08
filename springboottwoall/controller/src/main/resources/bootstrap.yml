@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: springbootTwo
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        service-id: configserver
+      fail-fast: true
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://${EUREKA_SERVER_ADDRESS}:9003/eureka/

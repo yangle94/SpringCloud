@@ -11,8 +11,8 @@ services:
       - "9103:9003"
     hostname: eureka1
     environment:
-      - eureka.client.serviceUrl.defaultZone=http://eureka2:9003/eureka/,http://eureka3:9003/eureka/
-      - eureka.instance.hostname=eureka1
+      - ADDITIONAL_EUREKA_SERVER_LIST=http://eureka2:9003/eureka/,http://eureka3:9003/eureka/
+      - hostName=eureka1
 
   eureka2:
     image: angley/springboot-netflix
@@ -24,8 +24,8 @@ services:
       - "9104:9003"
     hostname: eureka2
     environment:
-      - eureka.client.serviceUrl.defaultZone=http://eureka1:9003/eureka/,http://eureka3:9003/eureka/
-      - eureka.instance.hostname=eureka2
+      - ADDITIONAL_EUREKA_SERVER_LIST=http://eureka1:9003/eureka/,http://eureka3:9003/eureka/
+      - hostName=eureka2
 
   eureka3:
     image: angley/springboot-netflix
@@ -37,8 +37,8 @@ services:
       - "9105:9003"
     hostname: eureka3
     environment:
-      - eureka.client.serviceUrl.defaultZone=http://eureka2:9003/eureka/,http://eureka1:9003/eureka/
-      - eureka.instance.hostname=eureka3
+      - ADDITIONAL_EUREKA_SERVER_LIST=http://eureka2:9003/eureka/,http://eureka1:9003/eureka/
+      - hostName=eureka3
 
 networks:
   eureka-net:
