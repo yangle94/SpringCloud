@@ -10,6 +10,9 @@ spring:
           uri: https://github.com/yangle94/config
   application:
     name: configserver
+  rabbitmq:
+    host: localhost
+    port: 5672
 
 #JMX
 endpoints:
@@ -38,5 +41,6 @@ eureka:
   client:
     service-url:
       defaultZone: http://localhost:9003/eureka/
+
 
 
