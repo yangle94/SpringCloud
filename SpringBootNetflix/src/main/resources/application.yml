@@ -19,9 +19,6 @@ eureka:
     serviceUrl:
       defaultZone: ${ADDITIONAL_EUREKA_SERVER_LIST}
 
-  instance:
-    hostname: ${hostName}
-
   server:
     eviction-interval-timer-in-ms: 3000
 
