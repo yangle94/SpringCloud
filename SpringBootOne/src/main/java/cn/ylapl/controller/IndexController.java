@@ -1,5 +1,6 @@
 package cn.ylapl.controller;
 
+import cn.ylapl.entity.SeleniumInfo;
 import cn.ylapl.feignInterface.Test1;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
@@ -36,6 +37,8 @@ public class IndexController {
     })
     @RequestMapping("/test")
     public String index(@RequestParam String id) {
+        SeleniumInfo seleniumInfo = new SeleniumInfo();
+        seleniumInfo.getId();
         logger.error("springbootOne1被调用{}", id);
         return test1.test1();
     }
