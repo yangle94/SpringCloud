@@ -1,0 +1,64 @@
+version: "3"
+services:
+
+  hongkongAdmin:
+    image: angley/springboot-admin
+    hostname: hongkongAdmin
+    deploy:
+      replicas: 1
+      placement:
+        constraints:
+          - node.labels.zone != HongKong
+    environment:
+      - spring.cloud.config.profile=prod
+      - EUREKA_SERVER_ADDRESS=eureka
+    networks:
+      - dockercoins
+
+  hongkongOne1:
+    image: angley/springboot-one
+    hostname: hongkongOne2
+    deploy:
+      replicas: 1
+      placement:
+        constraints:
+          - node.labels.zone != HongKong
+    environment:
+      - spring.cloud.config.profile=prod
+      - EUREKA_SERVER_ADDRESS=eureka
+    networks:
+      - dockercoins
+
+  hongkongOne2:
+      image: angley/springboot-one
+      hostname: hongkongOne2
+      deploy:
+        replicas: 1
+        placement:
+          constraints:
+            - node.labels.zone != HongKong
+      environment:
+        - spring.cloud.config.profile=prod
+        - EUREKA_SERVER_ADDRESS=eureka
+      networks:
+        - dockercoins
+
+  hongkongApigetway:
+      image: angley/springboot-apigetway
+      deploy:
+        replicas: 1
+        placement:
+          constraints:
+            - node.labels.zone != HongKong
+      hostname: hongkongApigetway
+      ports:
+        - 9004:9004
+      environment:
+        - spring.cloud.config.profile=prod
+        - EUREKA_SERVER_ADDRESS=eureka
+      networks:
+        - dockercoins
+
+networks:
+  dockercoins:
+    #external: true
