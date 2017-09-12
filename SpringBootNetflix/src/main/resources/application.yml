@@ -1,6 +1,6 @@
 #端口
 server:
-  port: 9003
+  port: 9002
 
 #注释此行，自动去检测主机名
 #eureka:
@@ -21,12 +21,13 @@ eureka:
 
   server:
     eviction-interval-timer-in-ms: 3000
+  instance:
+    prefer-ip-address: false
 
 #serviceID
 spring:
   application:
       name: eureka
-
 #自我保护模式
 #eureka:server:enable-self-preservation=false
 
