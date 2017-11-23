@@ -19,13 +19,6 @@
 
     <dependencies>
 
-        <!-- 本地依赖 -->
-        <dependency>
-            <artifactId>api</artifactId>
-            <groupId>cn.ylapl.user</groupId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
-
         <!-- ========= === == === = == = = == = =SpringCloud依赖 = = = = == = = = = = = = ======= = = = == = = = = -->
 
         <!-- zuul -->
@@ -38,6 +31,12 @@
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-security</artifactId>
+        </dependency>
+
+        <!-- spring security oauth2 -->
+        <dependency>
+            <groupId>org.springframework.security.oauth</groupId>
+            <artifactId>spring-security-oauth2</artifactId>
         </dependency>
 
         <!-- ========= === == === = == = = == = =SpringCloud依赖 end = = = = == = = = = = = = ======= = = = == = = = = -->
