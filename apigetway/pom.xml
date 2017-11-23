@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>cn.ylapl.cloud</groupId>
+        <artifactId>all</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>apigetway</artifactId>
+    <version>${vs.version}</version>
+    <packaging>jar</packaging>
+
+    <properties>
+        <finalName>apigetway</finalName>
+    </properties>
+
+    <dependencies>
+
+        <!-- 本地依赖 -->
+        <dependency>
+            <artifactId>api</artifactId>
+            <groupId>cn.ylapl.user</groupId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
+        <!-- ========= === == === = == = = == = =SpringCloud依赖 = = = = == = = = = = = = ======= = = = == = = = = -->
+
+        <!-- zuul -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-zuul</artifactId>
+        </dependency>
+
+        <!-- cloud 单点登录 -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-security</artifactId>
+        </dependency>
+
+        <!-- ========= === == === = == = = == = =SpringCloud依赖 end = = = = == = = = = = = = ======= = = = == = = = = -->
+
+    </dependencies>
+
+    <!-- Package as an executable jar -->
+    <build>
+        <finalName>${finalName}</finalName>
+
+        <plugins>
+
+            <plugin>
+                <groupId>com.spotify</groupId>
+                <artifactId>docker-maven-plugin</artifactId>
+                <version>${docker.maven.plug.version}</version>
+                <configuration>
+                    <imageName>${docker.image.prefix}/${finalName}</imageName>
+                    <dockerDirectory>src/main/docker</dockerDirectory>
+                    <resources>
+                        <resource>
+                            <targetPath>/</targetPath>
+                            <directory>${project.build.directory}</directory>
+                            <include>${project.build.finalName}.jar</include>
+                        </resource>
+                    </resources>
+                </configuration>
+            </plugin>
+
+        </plugins>
+    </build>
+
+</project>

@@ -89,7 +89,12 @@ modules.xml
 
 
 ### Maven ###
-target/*
+admin/target/*
+apigetway/target/*
+config/target/*
+netflix/target/*
+one/target/*
+
 pom.xml.tag
 pom.xml.releaseBackup
 pom.xml.versionsBackup
