@@ -3,7 +3,7 @@ services:
 
   admin:
     image: registry.cn-hangzhou.aliyuncs.com/angle/admin
-    hostname: admin
+#    hostname: admin
     ports:
       - "9003:9003"
     environment:
@@ -13,7 +13,7 @@ services:
 
   apigetway:
     image: registry.cn-hangzhou.aliyuncs.com/angle/apigetway
-    hostname: apigetway
+#    hostname: apigetway
     ports:
       - "9002:9002"
     environment:

@@ -3,9 +3,9 @@ services:
 
   config:
     image: registry.cn-hangzhou.aliyuncs.com/angle/config
-    hostname: config
+#    hostname: config
     ports:
-      - "9002:9002"
+      - "9000:9000"
     environment:
       - EUREKA_SERVER_ADDRES=http://eureka:9001/eureka
     networks:
