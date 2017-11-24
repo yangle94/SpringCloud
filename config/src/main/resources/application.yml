@@ -12,6 +12,8 @@ spring:
         git:
           ##项目的git地址
           uri: ${GIT_CONFIG_URL}
+          username: ${GIT_CONFIG_USERNAME}angle
+          password: ${GIT_CONFIG_PWD}yangle123
   application:
     name: config
   rabbitmq:

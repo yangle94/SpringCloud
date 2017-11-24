@@ -8,7 +8,9 @@ services:
       - "9000:9000"
     environment:
       - EUREKA_SERVER_ADDRES=http://eureka:9001/eureka
-      - DGIT_CONFIG_URL=http://git.ylapl.cn/angle/config.git
+      - GIT_CONFIG_URL=http://git.ylapl.cn/angle/config.git
+      - GIT_CONFIG_USERNAME}=angle
+      - GIT_CONFIG_PWD}=yangle123
     networks:
       - eureka-net
 
