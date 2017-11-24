@@ -35,6 +35,13 @@
             </exclusions>
         </dependency>
 
+        <!-- admin UI -->
+        <dependency>
+            <groupId>de.codecentric</groupId>
+            <artifactId>spring-boot-admin-server-ui</artifactId>
+            <version>${admin.version}</version>
+        </dependency>
+
         <!-- ========= === == === = == = = == = =SpringCloud依赖 = = = = == = = = = = = = ======= = = = == = = = = -->
 
     </dependencies>

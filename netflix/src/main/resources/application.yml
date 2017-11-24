@@ -1,6 +1,6 @@
 #端口
 server:
-  port: 9002
+  port: 9001
 
 #注释此行，自动去检测主机名
 #eureka:
@@ -12,8 +12,8 @@ eureka:
   client:
 
     #判断是否注册自身
-    registerWithEureka: true
-    fetchRegistry: true
+    registerWithEureka: false
+    fetchRegistry: false
 
     #其它eureka地址
     serviceUrl:
@@ -21,6 +21,8 @@ eureka:
 
   server:
     eviction-interval-timer-in-ms: 3000
+    #自我保护模式
+    enable-self-preservation: false
   instance:
     prefer-ip-address: false
 
@@ -28,7 +30,4 @@ eureka:
 spring:
   application:
       name: eureka
-#自我保护模式
-#eureka:server:enable-self-preservation=false
-
 

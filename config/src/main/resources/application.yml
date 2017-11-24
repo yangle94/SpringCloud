@@ -1,3 +1,7 @@
+#JettyPort
+server:
+  port: 9000
+
 #时区
 spring:
   jackson:
@@ -26,18 +30,12 @@ management:
     db:
       enabled: false
 
-
 security:
   basic:
     enabled: false
-
-#JettyPort
-server:
-  port: 9002
-
 
 #eureka url
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:9003/eureka/
+      defaultZone: http://localhost:9001/eureka/
