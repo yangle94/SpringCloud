@@ -2,48 +2,22 @@ version: "3"
 services:
 
   admin:
-    image: angley/springboot-admin
+    image: registry.cn-hangzhou.aliyuncs.com/angle/admin
     hostname: admin
+    ports:
+      - "9003:9003"
     environment:
-      - spring.cloud.config.profile=prod
-      - EUREKA_SERVER_ADDRESS=eureka
-    networks:
-      - eureka-net
-
-  one:
-    image: angley/springboot-one
-    hostname: one
-    links:
-      - admin
-    environment:
-      - spring.cloud.config.profile=prod
-      - EUREKA_SERVER_ADDRESS=eureka
-    networks:
-      - eureka-net
-
-  two:
-    image: angley/springboot-one
-    hostname: two
-    links:
-      - admin
-    environment:
-      - spring.cloud.config.profile=prod
-      - EUREKA_SERVER_ADDRESS=eureka
+      - EUREKA_SERVER_ADDRES=http://eureka:9001/eureka
     networks:
       - eureka-net
 
   apigetway:
-    image: angley/springboot-apigetway
+    image: registry.cn-hangzhou.aliyuncs.com/angle/apigetway
     hostname: apigetway
     ports:
-      - "9004:9004"
-    links:
-      - admin
-      - one
-      - two
+      - "9002:9002"
     environment:
-      - spring.cloud.config.profile=prod
-      - EUREKA_SERVER_ADDRESS=eureka
+      - EUREKA_SERVER_ADDRES=http://eureka:9001/eureka
     networks:
       - eureka-net
 

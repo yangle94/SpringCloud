@@ -6,8 +6,8 @@ eureka:
   client:
 
     #判断是否注册自身
-    registerWithEureka: false
-    fetchRegistry: false
+    registerWithEureka: true
+    fetchRegistry: true
 
     #其它eureka地址
     serviceUrl:
@@ -16,7 +16,7 @@ eureka:
   server:
     eviction-interval-timer-in-ms: 3000
     #自我保护模式
-    enable-self-preservation: false
+    enable-self-preservation: true
   instance:
     prefer-ip-address: false
 

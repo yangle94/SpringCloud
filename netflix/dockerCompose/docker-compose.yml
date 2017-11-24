@@ -8,7 +8,7 @@ services:
         aliases:
           - eureka
     ports:
-      - "9103:9003"
+      - "9103:9001"
     hostname: eureka1
     environment:
       - ADDITIONAL_EUREKA_SERVER_LIST=http://eureka2:9003/eureka/,http://eureka3:9003/eureka/
@@ -21,7 +21,7 @@ services:
         aliases:
           - eureka
     ports:
-      - "9104:9003"
+      - "9104:9001"
     hostname: eureka2
     environment:
       - ADDITIONAL_EUREKA_SERVER_LIST=http://eureka1:9003/eureka/,http://eureka3:9003/eureka/
@@ -34,7 +34,7 @@ services:
         aliases:
           - eureka
     ports:
-      - "9105:9003"
+      - "9105:9001"
     hostname: eureka3
     environment:
       - ADDITIONAL_EUREKA_SERVER_LIST=http://eureka2:9003/eureka/,http://eureka1:9003/eureka/
