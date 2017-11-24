@@ -13,10 +13,12 @@ spring:
           ##项目的git地址
           uri: https://github.com/yangle94/config
   application:
-    name: configserver
+    name: config
   rabbitmq:
-    host: localhost
+    host: rabbitmq
     port: 5672
+    username: user
+    password: 123456
 
 #JMX
 endpoints:

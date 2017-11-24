@@ -2,12 +2,6 @@
 server:
   port: 9001
 
-#注释此行，自动去检测主机名
-#eureka:
-#  instance:
-#    hostname: one
-
-
 eureka:
   client:
 
@@ -30,4 +24,3 @@ eureka:
 spring:
   application:
       name: eureka
-

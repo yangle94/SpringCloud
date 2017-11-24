@@ -1,11 +1,15 @@
+#SpringPort
+server:
+  port: 9003
+
 spring:
   application:
-    name: springbootAdmin
+    name: admin
   cloud:
     config:
       discovery:
         enabled: true
-        service-id: configserver
+        service-id: config
       fail-fast: true
 
 eureka:

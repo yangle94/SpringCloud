@@ -1,11 +1,15 @@
+#JettyPort
+server:
+  port: 9002
+
 spring:
   application:
-    name: springbootApiGetWay
+    name: apigetway
   cloud:
     config:
       discovery:
         enabled: true
-        service-id: configserver
+        service-id: config
       fail-fast: true
 
 eureka:
