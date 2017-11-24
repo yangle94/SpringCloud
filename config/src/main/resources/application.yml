@@ -11,7 +11,7 @@ spring:
       server:
         git:
           ##项目的git地址
-          uri: https://github.com/yangle94/config
+          uri: ${GIT_CONFIG_URL}
   application:
     name: config
   rabbitmq:
