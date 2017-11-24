@@ -12,8 +12,8 @@ spring:
         git:
           ##项目的git地址
           uri: ${GIT_CONFIG_URL}
-          username: ${GIT_CONFIG_USERNAME}angle
-          password: ${GIT_CONFIG_PWD}yangle123
+          username: ${GIT_CONFIG_USERNAME}
+          password: ${GIT_CONFIG_PWD}
   application:
     name: config
   rabbitmq:
@@ -21,6 +21,12 @@ spring:
     port: 5672
     username: user
     password: 123456
+
+#eureka url
+eureka:
+  client:
+    service-url:
+      defaultZone: ${EUREKA_SERVER_ADDRES}
 
 #JMX
 endpoints:
@@ -37,9 +43,3 @@ management:
 security:
   basic:
     enabled: false
-
-#eureka url
-eureka:
-  client:
-    service-url:
-      defaultZone: ${EUREKA_SERVER_ADDRES}

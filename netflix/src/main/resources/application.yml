@@ -29,3 +29,19 @@ spring:
     port: 5672
     username: user
     password: 123456
+
+#JMX
+endpoints:
+  jmx:
+    unique-names: true
+
+management:
+  security:
+    enabled: false
+  health:
+    db:
+      enabled: false
+
+security:
+  basic:
+    enabled: false
