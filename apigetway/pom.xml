@@ -55,6 +55,7 @@
                 <version>${docker.maven.plug.version}</version>
                 <configuration>
                     <imageName>${docker.image.prefix}/${finalName}</imageName>
+                    <imageTags>${vs.version}</imageTags>
                     <dockerDirectory>src/main/docker</dockerDirectory>
                     <resources>
                         <resource>

@@ -24,3 +24,8 @@ eureka:
 spring:
   application:
       name: eureka
+  rabbitmq:
+    host: rabbitmq
+    port: 5672
+    username: user
+    password: 123456
