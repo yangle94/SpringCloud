@@ -17,9 +17,9 @@
 
 docker run -d --hostname rabbitmq1 --name rabbitmq -p 15672:15672 -p 5672:5672 -e RABBITMQ_DEFAULT_USER=user -e RABBITMQ_DEFAULT_PASS=123456 rabbitmq
 
-docker run --name mongo -v /Users/Angle/project/dockerData/mongo:/data/db -p 27017:27017 -d mongo
+docker run --name mongo -v ~/project/dockerData/mongo:/data/db -p 27017:27017 -d mongo
 
-docker run --name mysql -v /Users/Angle/project/dockerData/mysql:/var/lib/mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=123456 -d mysql
+docker run --name mysql -v ~/project/dockerData/mysql:/var/lib/mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=123456 -d mysql
 
 docker run --name redis -p 6379:6379 -d redis
 ```
