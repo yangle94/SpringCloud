@@ -1,11 +1,11 @@
-#!bin/bash
-source ~/.bash_profile
+#!/bin/bash -login
+
 for file in ./*
 do
 	if test -d $file
     	then
 		cd $file
-		mvndocker
+		mvn clean package docker:build -Dmaven.test.skip=true
 		cd ..
     	fi
 done

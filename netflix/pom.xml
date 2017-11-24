@@ -42,6 +42,24 @@
         <finalName>${finalName}</finalName>
 
         <plugins>
+
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <!-- 指定该Main Class为全局的唯一入口 -->
+                    <mainClass>cn.ylapl.SpringBootNetflix</mainClass>
+                    <layout>ZIP</layout>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal><!--可以把依赖的包都打包到生成的Jar包中-->
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
             <!-- docker打包工具 -->
             <plugin>
                 <groupId>com.spotify</groupId>
@@ -51,6 +69,7 @@
                     <imageName>${docker.image.prefix}/${finalName}</imageName>
                     <dockerDirectory>src/main/docker</dockerDirectory>
                     <imageTags>${vs.version}</imageTags>
+                    <pushImage>false</pushImage>
                     <resources>
                         <resource>
                             <targetPath>/</targetPath>
