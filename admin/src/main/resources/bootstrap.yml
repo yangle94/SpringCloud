@@ -7,29 +7,8 @@ spring:
         enabled: true
         service-id: config
       fail-fast: true
-  rabbitmq:
-    host: rabbitmq
-    port: 5672
-    username: user
-    password: 123456
 
 eureka:
   client:
     service-url:
       defaultZone: ${EUREKA_SERVER_ADDRES}
-
-#JMX
-endpoints:
-  jmx:
-    unique-names: true
-
-management:
-  security:
-    enabled: false
-  health:
-    db:
-      enabled: false
-
-security:
-  basic:
-    enabled: false

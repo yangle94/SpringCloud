@@ -1,6 +1,6 @@
 spring:
   application:
-    name: apigetway
+    name: sso
   cloud:
     config:
       discovery:
@@ -16,16 +16,8 @@ eureka:
     prefer-ip-address: true
         #注册ID用默认就好，默认为 ip:hostname:port
 #    instance-id: ${spring.cloud.client.ipAddress}:${server.port}
-
-security:
-  basic:
-    enabled: false
-  oauth2:
-    resource:
-      user-info-uri: http://localhost:${server.port}/sso/user
-      prefer-token-info: false
-    client:
-      userAuthorizationUri: http://localhost:${server.port}/sso/oauth/authorize
-      access-token-uri: http://localhost:${server.port}/sso/oauth/token
-      client-id: password
-
+#
+#security:
+#  oauth2:
+#    resource:
+#      filter-order: 3
