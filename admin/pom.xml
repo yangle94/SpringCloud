@@ -42,6 +42,12 @@
             <version>${admin.version}</version>
         </dependency>
 
+        <!-- 由于core包更新后admin并未更新，请等待升级后去掉此包 -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-netflix-core</artifactId>
+            <version>1.3.5.RELEASE</version>
+        </dependency>
         <!-- ========= === == === = == = = == = =SpringCloud依赖 = = = = == = = = = = = = ======= = = = == = = = = -->
 
     </dependencies>
