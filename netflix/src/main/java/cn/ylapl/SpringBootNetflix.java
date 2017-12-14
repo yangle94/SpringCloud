@@ -4,8 +4,8 @@
  */
 package cn.ylapl;
 
+import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
 
 /**
@@ -18,7 +18,7 @@ public class SpringBootNetflix {
 
     public static void main(String arg[]) {
 
-        new SpringApplicationBuilder(SpringBootNetflix.class).web(true).run(arg);
+        SpringApplication.run(SpringBootNetflix.class, arg);
     }
 
 }
