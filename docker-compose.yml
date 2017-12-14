@@ -20,7 +20,15 @@ services:
       - EUREKA_SERVER_ADDRES=http://eureka:9001/eureka
     networks:
       - eureka-net
-
+  sso:
+    image: registry.cn-hangzhou.aliyuncs.com/angle/sso
+  #    hostname: sso
+    ports:
+      - "9004:9004"
+    environment:
+      - EUREKA_SERVER_ADDRES=http://eureka:9001/eureka
+    networks:
+      - eureka-net
 networks:
   eureka-net:
     external:
