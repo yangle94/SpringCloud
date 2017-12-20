@@ -11,7 +11,7 @@ services:
       - "9101:9001"
     hostname: eureka1
     environment:
-      - ADDITIONAL_EUREKA_SERVER_LIST=http://eureka2:9003/eureka/,http://eureka3:9003/eureka/
+      - ADDITIONAL_EUREKA_SERVER_LIST=http://eureka2:9001/eureka,http://eureka3:9001/eureka
       - hostName=eureka1
 
   eureka2:
@@ -24,7 +24,7 @@ services:
       - "9102:9001"
     hostname: eureka2
     environment:
-      - ADDITIONAL_EUREKA_SERVER_LIST=http://eureka1:9003/eureka/,http://eureka3:9003/eureka/
+      - ADDITIONAL_EUREKA_SERVER_LIST=http://eureka1:9001/eureka/,http://eureka3:9001/eureka
       - hostName=eureka2
 
   eureka3:
@@ -37,7 +37,7 @@ services:
       - "9103:9001"
     hostname: eureka3
     environment:
-      - ADDITIONAL_EUREKA_SERVER_LIST=http://eureka2:9003/eureka/,http://eureka1:9003/eureka/
+      - ADDITIONAL_EUREKA_SERVER_LIST=http://eureka2:9001/eureka/,http://eureka1:9001/eureka
       - hostName=eureka3
 
 networks:
