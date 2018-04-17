@@ -20,7 +20,7 @@ services:
       - eureka-net
 
   rabbitmq:
-    image: rabbitmq
+    image: rabbitmq:management
     hostname: rabbitmq1
     ports:
       - "15672:15672"

@@ -13,7 +13,7 @@ eureka:
     service-url:
       defaultZone: ${EUREKA_SERVER_ADDRES}
   instance:
-    prefer-ip-address: true
+    prefer-ip-address: ${IP_ON_OF}
         #注册ID用默认就好，默认为 ip:hostname:port
 #    instance-id: ${spring.cloud.client.ipAddress}:${server.port}
 #
