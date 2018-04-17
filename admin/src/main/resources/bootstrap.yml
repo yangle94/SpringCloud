@@ -13,4 +13,4 @@ eureka:
     service-url:
       defaultZone: ${EUREKA_SERVER_ADDRES}
   instance:
-    prefer-ip-address: true
+    prefer-ip-address: ${IP_ON_OF}

@@ -11,6 +11,7 @@ services:
       - GIT_CONFIG_URL=https://git.ylapl.cn/angle/config.git
       - GIT_CONFIG_USERNAME=angle
       - GIT_CONFIG_PWD=yangle123
+      - IP_ON_OF=true
     networks:
       - eureka-net
 

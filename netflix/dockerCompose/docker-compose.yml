@@ -13,6 +13,7 @@ services:
     environment:
       - ADDITIONAL_EUREKA_SERVER_LIST=http://eureka2:9001/eureka,http://eureka3:9001/eureka
       - hostName=eureka1
+      - IP_ON_OF=true
 
   eureka2:
     image: registry.cn-hangzhou.aliyuncs.com/angle/netflix
@@ -26,6 +27,7 @@ services:
     environment:
       - ADDITIONAL_EUREKA_SERVER_LIST=http://eureka1:9001/eureka/,http://eureka3:9001/eureka
       - hostName=eureka2
+      - IP_ON_OF=true
 
   eureka3:
     image: registry.cn-hangzhou.aliyuncs.com/angle/netflix
@@ -39,6 +41,7 @@ services:
     environment:
       - ADDITIONAL_EUREKA_SERVER_LIST=http://eureka2:9001/eureka/,http://eureka1:9001/eureka
       - hostName=eureka3
+      - IP_ON_OF=true
 
 networks:
   eureka-net:
