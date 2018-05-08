@@ -27,12 +27,6 @@
             <artifactId>spring-cloud-starter-zuul</artifactId>
         </dependency>
 
-        <!-- cloud 单点登录 -->
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-security</artifactId>
-        </dependency>
-
         <!-- spring security oauth2 -->
         <dependency>
             <groupId>org.springframework.security.oauth</groupId>
