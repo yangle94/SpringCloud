@@ -1,5 +1,8 @@
 #serviceID
 spring:
+  jackson:
+    #jackson 时区
+    time-zone: GMT+8
   application:
     name: eureka
 #端口
