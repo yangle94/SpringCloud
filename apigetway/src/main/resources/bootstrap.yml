@@ -7,12 +7,9 @@ spring:
         enabled: true
         service-id: config
       fail-fast: true
-      profile: dev
+      #profile: dev
       label: springboot2.0
-    gateway:
-      discovery:
-        locator:
-          enabled: true
+
 eureka:
   client:
     service-url:
