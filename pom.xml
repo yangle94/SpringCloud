@@ -6,7 +6,7 @@
 
     <groupId>cn.ylapl.cloud</groupId>
     <artifactId>all</artifactId>
-    <version>${vs.version}</version>
+    <version>3.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <modules>
@@ -19,8 +19,8 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.0.6.RELEASE</version>
-        <relativePath/> <!-- lookup parent from repository -->
+        <version>2.1.5.RELEASE</version>
+        <relativePath />
     </parent>
 
     <!--spring cloud-->
@@ -33,6 +33,7 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+
             <dependency>
                 <groupId>de.codecentric</groupId>
                 <artifactId>spring-boot-admin-dependencies</artifactId>
@@ -44,11 +45,11 @@
     </dependencyManagement>
 
     <properties>
-        <springboot.version>2.0.6.RELEASE</springboot.version>
-        <spring-cloud.version>Finchley.SR2</spring-cloud.version>
+        <springboot.version>2.1.5.RELEASE</springboot.version>
+        <spring-cloud.version>Greenwich.SR2</spring-cloud.version>
         <spring-boot-admin.version>2.0.4</spring-boot-admin.version>
 
-        <vs.version>2.0-SNAPSHOT</vs.version>
+        <vs.version>3.0-SNAPSHOT</vs.version>
         <java.version>1.8</java.version>
         <admin.version>1.5.5</admin.version>
         <swagger.version>2.7.0</swagger.version>
@@ -110,23 +111,18 @@
             <artifactId>spring-retry</artifactId>
         </dependency>
 
-        <!-- spring admin client-->
-        <dependency>
-            <groupId>de.codecentric</groupId>
-            <artifactId>spring-boot-admin-starter-client</artifactId>
-        </dependency>
-
         <!-- spring security  （admin client 需要） -->
-        <!--<dependency>-->
-            <!--<groupId>org.springframework.boot</groupId>-->
-            <!--<artifactId>spring-boot-starter-security</artifactId>-->
-        <!--</dependency>-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
 
         <!-- lombok -->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <optional>true</optional>
+            <scope>compile</scope>
         </dependency>
 
     </dependencies>
