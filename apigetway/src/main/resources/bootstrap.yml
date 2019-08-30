@@ -9,6 +9,8 @@ spring:
       fail-fast: true
       #profile: dev
       label: release_20190830
+      username: admin
+      password: 123456
 
 eureka:
   client:
