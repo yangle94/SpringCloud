@@ -5,18 +5,25 @@ spring:
     time-zone: GMT+8
   application:
     name: eureka
+  security:
+    user:
+      name: admin
+      password: 123456
 #端口
 server:
   port: 9001
 
 eureka:
   client:
+    #健康检查
+    healthcheck:
+      enabled: true
     #判断是否注册自身
-    registerWithEureka: true
-    fetchRegistry: true
+    registerWithEureka: false
+    fetchRegistry: false
     #其它eureka地址
     serviceUrl:
-      defaultZone: http://eureka-service:9001/eureka/
+      defaultZone: http://admin:123456@eureka-service:9001/eureka/
 
   server:
     #自我保护模式
@@ -24,10 +31,3 @@ eureka:
   instance:
     #服务间调用使用IP地址
     prefer-ip-address: true
-
-#admin 允许监控所有接口
-management:
-  endpoints:
-    web:
-      exposure:
-        include: "*"

@@ -111,11 +111,11 @@
             <artifactId>spring-retry</artifactId>
         </dependency>
 
-        <!-- spring security  （admin client 需要） -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-security</artifactId>
-        </dependency>
+        <!-- spring security -->
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.boot</groupId>-->
+<!--            <artifactId>spring-boot-starter-security</artifactId>-->
+<!--        </dependency>-->
 
         <!-- lombok -->
         <dependency>
