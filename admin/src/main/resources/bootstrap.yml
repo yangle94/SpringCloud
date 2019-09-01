@@ -18,3 +18,5 @@ eureka:
       defaultZone: http://admin:123456@eureka-service:9001/eureka/
   instance:
     prefer-ip-address: true
+    metadata-map:
+      startup: ${random.int}

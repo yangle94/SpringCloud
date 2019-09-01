@@ -9,6 +9,7 @@ import org.springframework.security.web.authentication.SavedRequestAwareAuthenti
 import org.springframework.security.web.csrf.CookieCsrfTokenRepository;
 
 /**
+ * springcloud admin权限放开
  * date: 2019/8/30
  * time: 3:01 下午
  * author: Angle

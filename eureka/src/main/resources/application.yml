@@ -9,6 +9,12 @@ spring:
     user:
       name: admin
       password: 123456
+  boot:
+    admin:
+      client:
+        # 访问admin的用户名密码
+        username: admin
+        password: 123456
 #端口
 server:
   port: 9001
@@ -19,18 +25,21 @@ eureka:
     healthcheck:
       enabled: true
     #判断是否注册自身
-    registerWithEureka: false
-    fetchRegistry: false
+    registerWithEureka: true
+    fetchRegistry: true
     #其它eureka地址
     serviceUrl:
       defaultZone: http://admin:123456@eureka-service:9001/eureka/
-
   server:
     #自我保护模式
     enable-self-preservation: true
   instance:
     #服务间调用使用IP地址
     prefer-ip-address: true
+    metadata-map:
+      # 注册中心携带admin server访问 admin client的用户名密码
+      user.name: ${spring.security.user.name}
+      user.password: ${spring.security.user.password}
 
 #admin 允许监控所有接口
 management:
