@@ -9,12 +9,12 @@
         <version>3.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>apigetway</artifactId>
+    <artifactId>apigateway</artifactId>
     <version>3.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>apigetway</name>
-    <description>apigetway</description>
+    <name>apigateway</name>
+    <description>apigateway</description>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

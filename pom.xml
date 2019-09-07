@@ -9,6 +9,8 @@
     <version>3.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
+    <name>all</name>
+
     <modules>
         <module>admin</module>
         <module>apigateway</module>
