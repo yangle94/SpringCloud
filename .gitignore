@@ -92,8 +92,8 @@ modules.xml
 admin/target/*
 apigetway/target/*
 config/target/*
-netflix/target/*
-one/target/*
+eureka/target/*
+angle-common-start-tools/target/*
 
 pom.xml.tag
 pom.xml.releaseBackup
