@@ -90,7 +90,7 @@ modules.xml
 
 ### Maven ###
 admin/target/*
-apigetway/target/*
+apigateway/target/*
 config/target/*
 eureka/target/*
 angle-common-start-tools/target/*
