@@ -14,6 +14,7 @@
         <module>apigateway</module>
         <module>config</module>
         <module>eureka</module>
+        <module>angle-common-start-tools</module>
     </modules>
 
     <parent>
